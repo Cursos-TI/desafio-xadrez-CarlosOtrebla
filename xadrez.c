@@ -1,10 +1,106 @@
 #include <stdio.h>
+#include <locale.h>
+#include <windows.h>
+int main()
+{
+    // Configurando o console para aceitar acentos.
+    SetConsoleOutputCP(65001);
+    // setlocale(LC_ALL, "pt_BR.UTF-8"); // TODO: Descomentar esta linha se estiver utilizando Linux ou MacOS.
 
-// Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
+    int opcao;
+    int casas;
 
-int main() {
+    do
+    {
+        system("cls"); // Limpa a tela do console (Windows).
+        printf("╔═════════════════════════════════════════╗\n");
+        printf("║      Desafio de Xadrez - MateCheck      ║\n");
+        printf("╚═════════════════════════════════════════╝\n");
+
+        printf("╔═══ Escolha uma peça para movimentar:\n");
+        printf("║\n");
+        printf("╠═► 1 - Bispo\n");
+        printf("╠═► 2 - Torre\n");
+        printf("╠═► 3 - Rainha\n");
+        printf("╠═► 4 - Cavalo\n");
+        printf("╠═► 0 - Sair\n");
+        printf("║\n");
+        printf("╚════► ");
+        scanf(" %d", &opcao);
+
+        switch (opcao)
+        {
+        case 1: // TODO: Modificar a movimentação do Bispo para ser feita por uma função recursiva.   
+            {
+
+            printf("\nVocê escolheu o Bispo!\n");
+            printf("Quantas casas deseja mover o Bispo na diagonal? (Exemplo: 5)\n");
+            scanf(" %d", &casas);
+            for (int i = 0; i < casas; i++)
+            {
+                printf("Direita ");
+                Sleep(500); // Pausa de 500 milissegundos para simular o movimento
+                printf("Cima \n");
+                Sleep(500); // Pausa de 500 milissegundos para simular o movimento
+            }
+            system("pause");
+            break;
+        }
+        case 2:
+        {
+
+            int contador = 0;
+
+            printf("\n Vocé escolheu a Torre!\n");
+            printf("Quantas casas deseja mover a Torre para a direita? (Exemplo: 5)\n");
+            scanf(" %d", &casas);
+            while (contador < casas)
+            {
+                printf("Direita\n");
+                Sleep(500);
+                contador++;
+            }
+            system("pause");
+            break;
+        }
+        case 3:
+        {
+
+            printf("\n Vocé escolheu a Rainha!\n");
+            printf("Quantas casas deseja mover a Rainha para a esquerda? (Exemplo: 8)\n");
+            scanf(" %d", &casas);
+            for (int i = 0; i < casas; i++)
+            {
+                printf("Esquerda\n");
+                Sleep(500);
+            }
+            system("pause");
+            break;
+        }
+        case 4:
+            printf("\n Vocé escolheu o Cavalo!\n");
+            printf("Movimentação do Cavalo em L:\n");
+            for (int i = 0; i < 2; i++) // Movimento horizontal
+            {
+                printf("Cima ");
+                Sleep(500);
+            }
+
+            printf("Direita\n");
+            Sleep(500);
+
+            system("pause");
+            break;
+        case 0:
+            printf("\n Vocé escolheu Sair!\n");
+            break;
+        default:
+            printf("\n Vocé escolheu uma opção inválida!\n");
+            break;
+        }
+        /* code */
+    } while (opcao != 0);
+
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
 
