@@ -5,6 +5,73 @@ Você pode escolher qualquer um dos desafios para desenvolver. Sinta-se à vonta
 
 Bem-vindo ao desafio de Xadrez da MateCheck! Este projeto tem como objetivo testar e determinar os limites de utilização do código dentro do jogo utilizando estruturas de repetição e funções avançadas.
 
+---
+
+## 🔧 Configuração do Ambiente de Desenvolvimento
+
+### Pré-requisitos
+Para compilar e executar este projeto, você precisa ter o **GCC (GNU Compiler Collection)** instalado no Windows.
+
+### 📦 Instalação do GCC via MSYS2
+
+#### **Passo 1: Baixar e Instalar o MSYS2**
+1. Acesse: https://www.msys2.org/
+2. Baixe o instalador
+3. Execute e instale no caminho padrão: `C:\msys64`
+4. Marque a opção "Run MSYS2 now" ao final da instalação
+
+#### **Passo 2: Atualizar o MSYS2**
+No terminal MSYS2 UCRT64 que abrir, execute:
+```bash
+pacman -Syu
+```
+- Digite `Y` quando solicitado
+- Se pedir para fechar o terminal, feche e abra novamente o **MSYS2 UCRT64**
+
+#### **Passo 3: Instalar o GCC**
+No terminal MSYS2 UCRT64, execute:
+```bash
+pacman -S mingw-w64-ucrt-x86_64-gcc
+```
+- Digite `Y` quando solicitado
+- Aguarde a instalação completar
+
+#### **Passo 4: Adicionar ao PATH do Windows**
+Abra o **PowerShell como Administrador** e execute o comando a seguir para adicionar a variável de ambiente:
+```powershell
+[Environment]::SetEnvironmentVariable("Path", $env:Path + ";C:\msys64\ucrt64\bin", [EnvironmentVariableTarget]::Machine)
+```
+
+#### **Passo 5: Verificar a Instalação**
+Feche e abra novamente o PowerShell ou Terminal, então execute:
+```bash
+gcc --version
+```
+Se aparecer a versão do GCC, está tudo pronto! ✅
+
+> **Nota:** Caso o comando não funcione imediatamente, pode ser necessário reiniciar o computador para que o Windows reconheça as novas variáveis de ambiente.
+
+---
+
+## 🚀 Como Compilar e Executar
+
+### Compilar o projeto:
+```bash
+gcc xadrez.c -o xadrez.exe
+```
+
+### Compilar com avisos:
+```bash
+gcc -Wall -Wextra xadrez.c -o xadrez.exe
+```
+
+### Executar o programa:
+```bash
+.\xadrez.exe
+```
+
+---
+
 ## Níveis do Desafio
 
 ### 🏅 Nível Novato

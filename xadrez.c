@@ -49,7 +49,6 @@ int main()
         }
         case 2:
         {
-            int contador = 0;
             printf("╔═══ Você escolheu a Torre, quantas casas deseja move-la?\n");
             printf("║\n");
             printf("╚════► ");
@@ -75,7 +74,7 @@ int main()
             system("pause");
             break;
         case 0:
-            printf("\n Vocé escolheu Sair!\n");
+            printf("\n Volte sempre...!\n\n");
             break;
         default:
             printf("\n Vocé escolheu uma opção inválida!\n");
